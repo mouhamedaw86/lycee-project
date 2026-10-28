@@ -30,3 +30,9 @@ Authentication > URL Configuration : **Site URL** = l'adresse du site en ligne, 
 1. SQL Editor : exécuter `supabase/migrations/20261018000000_storage_ressources.sql` (crée le bucket privé « ressources »).
 2. Project Settings > API : copier la clé **service_role** (secrète) dans `.env` : `SUPABASE_SERVICE_ROLE_KEY=...` (ne jamais la partager ni la mettre sur GitHub).
 3. Dans le dossier du projet : `npm run ressources` (envoie tous les PDF du dossier `ressources/`).
+
+## 7. Espace professeur (/professeur)
+1. SQL Editor : exécuter `supabase/migrations/20261024000000_espace_professeur.sql` (tables `documents` et `custom_chapters`). Un nouveau projet l'a déjà dans `setup-complet.sql`.
+2. Sur Render > Environment, ajouter `SUPABASE_SERVICE_ROLE_KEY` (clé secrète Supabase) et `TEACHER_IDS` (identifiants des professeurs, séparés par des virgules).
+3. Ajouter un professeur : il crée un compte sur le site, ouvre `/professeur`, copie son identifiant affiché à l'écran et vous l'envoie ; vous l'ajoutez à `TEACHER_IDS` sur Render (redémarrage automatique).
+4. Le professeur publie ensuite ses PDF depuis `/professeur` : ils apparaissent immédiatement chez les élèves.

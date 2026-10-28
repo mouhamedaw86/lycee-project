@@ -6,6 +6,7 @@
 5. **Render** (render.com) : New > Blueprint > choisir le dépôt ; renseigner `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `GEMINI_API_KEY`.
 6. **Supabase** > Authentication > URL Configuration : mettre l'adresse Render dans *Site URL* et *Redirect URLs*.
 7. Emails : voir `CONFIGURATION.md` (SMTP personnalisé) ; pour démarrer, désactiver « Confirm email ».
+8. **Espace professeur** : voir `CONFIGURATION.md`, section 7 (`SUPABASE_SERVICE_ROLE_KEY` et `TEACHER_IDS` sur Render).
 Test : ouvrir `/api/health` sur l'adresse Render (doit afficher `"ai":true`).
 
 Remarque : sur l'offre gratuite, Render met le site en veille après un temps d'inactivité (premier chargement lent) et Supabase met en pause un projet inactif pendant une semaine.
